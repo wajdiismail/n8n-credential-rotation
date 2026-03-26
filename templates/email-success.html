@@ -1,0 +1,14 @@
+<h2>✅ Database Credential Rotation Successful</h2>
+
+<h3>🔑 NEW DATABASE CREDENTIALS</h3>
+<p><strong>Username:</strong> {{$json.username}}</p>
+<p><strong>Password:</strong> {{$json.newPassword}}</p>
+
+<h3>📋 Actions Completed:</h3>
+<ul>
+  <li>✓ PostgreSQL password: UPDATED</li>
+  <li>✓ Kubernetes secret: UPDATED</li>
+  <li>✓ Deployment: RESTARTED</li>
+</ul>
+
+<p>Time: {{$now}}</p>

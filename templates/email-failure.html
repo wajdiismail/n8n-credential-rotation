@@ -1,0 +1,27 @@
+<h2>⚠️ CRITICAL: Database Credential Rotation Failed</h2>
+
+<h3>🔑 NEW DATABASE CREDENTIALS</h3>
+<p><strong>Username:</strong> {{$json.username}}</p>
+<p><strong>Password:</strong> {{$json.newPassword}}</p>
+
+<h3>❌ Error Details</h3>
+<p><strong>Failed Step:</strong> {{$json.errorNode}}</p>
+<p><strong>Error Message:</strong> {{$json.errorMessage}}</p>
+<p><strong>Time:</strong> {{$now}}</p>
+
+<h3>📋 What Happened:</h3>
+<ul>
+  <li>✓ PostgreSQL password: UPDATED</li>
+  <li>✗ Kubernetes secret: UPDATE FAILED</li>
+  <li>✗ Deployment: NOT RESTARTED</li>
+</ul>
+
+<h3>🔧 Manual Fix Steps:</h3>
+<pre><code># Update the secret manually:
+kubectl patch secret backend-secrets -n default --type='json' -p='[{"op": "replace", "path": "/data/DB_USERNAME", "value":"{{$json.base64Username}}"},{"op": "replace", "path": "/data/DB_PASSWORD", "value":"{{$json.base64Password}}"}]'
+
+# Restart the deployment:
+kubectl rollout restart deployment/backend-test -n default
+</code></pre>
+
+<p><strong>⚠️ Urgent Action Required</strong></p>
