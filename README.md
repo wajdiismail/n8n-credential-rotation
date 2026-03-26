@@ -26,10 +26,7 @@ MIT
 Below is a screenshot of the n8n credential rotation workflow:
 
 ![n8n Workflow](docs/n8n-workflow-screenshot.png)
-# n8n-credential-rotation
-<<<<<<< HEAD
-n8n Database Credential Rotation - Automated PostgreSQL password rotation with Kubernetes secret sync. Runs monthly, generates secure passwords, updates secrets, restarts deployments with zero downtime, and sends detailed failure emails. Production-ready workflow with comprehensive error handling.
-=======
+## n8n-credential-rotation
 
 Automated, zero-touch PostgreSQL credential rotation with n8n and Kubernetes. This project provides a production-ready workflow to rotate database credentials, update Kubernetes secrets, and restart deployments with zero downtime.
 
